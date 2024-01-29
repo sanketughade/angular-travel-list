@@ -1,0 +1,10 @@
+<div class="form-container">
+  <form class="add-form" #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
+    <h3>What do you need for your 😍 trip?</h3>
+    <select [value]="item.quantity" [(ngModel)]="item.quantity">
+      <option *ngFor="let num of getRange(20)" [value]="num">{{ num }}</option>
+    </select>
+    <input type="text" placeholder="Item..." [(ngModel)]="item.description" />
+    <button type="submit">Add</button>
+  </form>
+</div>
